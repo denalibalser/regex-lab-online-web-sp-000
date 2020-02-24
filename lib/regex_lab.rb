@@ -17,12 +17,11 @@ def words_five_letters_long(text)
 end
 
 def first_word_capitalized_and_ends_with_punctuation?(text)
-  word=text.split(" ")
-  if word.grep(/\b[A-Z].*?\b/)
-    true
-  else
+  if text.scan(/^[A-Z][\s\S]+\.$/).empty?
     false
-  end 
+  else
+    true
+  end
 end
 
 def valid_phone_number?(phone)
